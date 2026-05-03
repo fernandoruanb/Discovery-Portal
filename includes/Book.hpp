@@ -1,5 +1,5 @@
-#ifndef BOOKS_HPP
-# define BOOKS_HPP
+#ifndef BOOK_HPP
+# define BOOK_HPP
 
 # include <iostream>
 # include <string>
@@ -11,12 +11,24 @@ In this book class, I represent only the books with their system ID, title, auth
 
 */
 
-class Books {
+class Book {
 	private:
+		// Details of the book
+
 		unsigned long long int	_id; // 0 to 18.446.744.073.709.551.615
 		unsigned short int	_numberOfPages; // 0 to 65535
 		unsigned short int	_volume;
 		unsigned short int	_year;
+
+		// Measurements to calculate the space necessary to store the book
+
+		double	_height;
+		double	_width;
+		double	_thickness;
+		double	_weight;
+
+		// Information about the book
+
 		std::string	_isbn; // International Standard Book Number
 		std::string	_title;
 		std::string	_author;
@@ -26,13 +38,21 @@ class Books {
 		std::string	_language;
 		std::string	_description;
 		std::vector<std::string>	_keywords; // to find the book by keywords in the system by a collection
+		// avoid to use "delete" here to keep compatibility with older versions 
+
 		Book(void); // I do not intend to have empty initializors of Books
+		Book(const Book& other); // Copy constructor are not allowed in the system
+		Book& operator=(const Book& other); // operator= are also not allowed in the system
 	public:
 		Book(int isbn, std::string title, std::string author, std::string category, std::string language);
 		~Book(void);
 
 		// get each information about the book, getters are forbidden to modificate any data (const)
 
+		double	getHeight(void) const;
+		double	getWidth(void) const;
+		double	getThickNess(void) const;
+		double	getWeight(void) const;
 		unsigned long long int	getId(void) const;
 		unsigned short int	getNumberOfPages(void) const;
 		short int	getVolume(void) const;
@@ -49,6 +69,10 @@ class Books {
 		
 		// update each information
 
+		void	setHeight(double height);
+		void	setWidth(double width);
+		void	setThickNess(double thickness);
+		void	setWeight(double weight);	
 		void	setId(unsigned long long int id);
 		void	setNumberOfPages(unsigned short int numberOfPages);
 		void	setVolume(unsigned short int volume);
@@ -64,4 +88,4 @@ class Books {
 		void	insertNewKeyword(std::string keyword);
 }
 
-#endif /* BOOKS_HPP */
+#endif /* BOOK_HPP */
