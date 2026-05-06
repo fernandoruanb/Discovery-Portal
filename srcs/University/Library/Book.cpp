@@ -15,7 +15,8 @@ Book::Book(std::string title, std::string author, std::string category, std::str
 	_volume(0),
 	_height(0),
 	_width(0),
-	_thickness(0)
+	_thickness(0),
+	_isVirtual(false) // the pattern will be the book is not virtual
 {
 	std::cout << "Book " << title << " created" << std::endl;
 }
@@ -52,6 +53,10 @@ int	Book::getVolume(void) const {
 	return (this->_volume);
 }
 
+bool	Book::getIsVirtual(void) const {
+	return (this->_isVirtual);
+}
+
 std::string	Book::getISBN(void) const {
 	return (this->_isbn);
 }
@@ -86,6 +91,10 @@ std::string	Book::getDescription(void) const {
 
 std::vector<std::string>	Book::getKeywords(void) const {
 	return (this->_keywords);
+}
+
+void	Book::setIsVirtual(bool isVirtual) {
+	this->_isVirtual = isVirtual;
 }
 
 void	Book::setHeight(double height) {

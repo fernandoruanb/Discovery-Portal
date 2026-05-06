@@ -27,6 +27,10 @@ class Book {
 		double	_thickness;
 		double	_weight;
 
+		// Conditionals
+
+		bool	_isVirtual;
+
 		// Information about the book
 
 		std::string	_isbn; // International Standard Book Number
@@ -49,6 +53,7 @@ class Book {
 
 		// get each information about the book, getters are forbidden to modificate any data (const)
 
+		bool	getIsVirtual(void) const;
 		double	getHeight(void) const;
 		double	getWidth(void) const;
 		double	getThickNess(void) const;
@@ -69,6 +74,7 @@ class Book {
 		
 		// update each information
 
+		void	setIsVirtual(bool isVirtual);
 		void	setHeight(double height);
 		void	setWidth(double width);
 		void	setThickNess(double thickness);
