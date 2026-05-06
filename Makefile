@@ -25,7 +25,8 @@ OBJDIR = objs
 
 # List of source files used by the project
 
-SRCS_FILES= main.cpp
+SRCS_FILES= main.cpp \
+	    Database/Database.cpp
 
 #To make everything more intelligent instead of to repeat using a lot of SRCDIR as a prefix
 
