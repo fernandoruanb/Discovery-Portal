@@ -1,4 +1,4 @@
-#include "../includes/Course.hpp"
+#include "../../../includes/University/Library/Course.hpp"
 
 Course::Course(unsigned long long int id, std::string title, std::string instructor, std::string category):
 	_id(id),

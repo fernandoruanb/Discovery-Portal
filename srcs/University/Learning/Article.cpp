@@ -1,4 +1,4 @@
-#include "../includes/Article.hpp"
+#include "../../../includes/University/Library/Article.hpp"
 
 Article::Article(unsigned long long int id, std::string title, std::string author, std::string category, std::string language) :
 	_id(id),

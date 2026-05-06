@@ -1,4 +1,4 @@
-#include "../includes/Lesson.hpp"
+#include "../../../includes/University/Library/Course.hpp"
 
 Lesson::Lesson(unsigned long long int id, unsigned long long int courseId, std::string title, std::string content) :
 	_id(id),

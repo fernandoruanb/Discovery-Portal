@@ -1,4 +1,4 @@
-#include "../includes/User.hpp"
+#include "../../../includes/University/Users/User.hpp"
 
 User::User(std::string name, std::string email, std::string password, std::string registrationNumber): 
 	_name(name), 

@@ -1,4 +1,4 @@
-#include "../includes/Table.hpp"
+#include "../../../includes/University/Library/Table.hpp"
 
 Table::Table(unsigned long long int id, std::string code, std::string location, unsigned short int capacity) :
 	_id(id),
