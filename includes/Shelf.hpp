@@ -1,7 +1,10 @@
 #ifndef SHELF_HPP
 # define SHELF_HPP
 
+# include "./Book.hpp"
 # include <iostream>
+# include <vector>
+# include <algorithm>
 # include <string>
 
 class Shelf{
@@ -12,6 +15,7 @@ class Shelf{
 		unsigned short int	_floor;
 		unsigned int	_capacity;
 		bool	_available;
+		std::vector<Book> _books;
 		Shelf(void);
 		Shelf(const Shelf &other);
 		Shelf& operator=(const Shelf &other);
@@ -27,6 +31,7 @@ class Shelf{
 		unsigned long long int	getId(void) const;
 		std::string	getCode(void) const;
 		std::string	getSection(void) const;
+		std::vector<Book>	getBooks(void) const;
 		unsigned short int	getFloor(void) const;
 		unsigned int	getCapacity(void) const;
 		bool	getAvailable(void) const;
@@ -39,6 +44,12 @@ class Shelf{
 		void	setFloor(unsigned long long int floor);
 		void	setCapacity(unsigned int capacity);
 		void	setAvailable(bool available);
+		void	setBooks(std::vector<Book> books);
+
+		// methods
+
+		bool	insertNewBook(const Book &book); // check and insert a new book on the shelf
+		bool	removeBook(unsigned long long int id); // remove book by id
 };
 
 #endif /* SHELF_HPP */
