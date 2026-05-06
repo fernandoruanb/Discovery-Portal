@@ -12,6 +12,7 @@ class Shelf{
 		unsigned long long int	_id;
 		std::string	_code;
 		std::string	_section;
+		bool	_isVirtual;
 		unsigned short int	_floor;
 		unsigned int	_capacity;
 		bool	_available;
@@ -28,6 +29,7 @@ class Shelf{
 		
 		// getters
 
+		bool	getIsVirtual(void) const;
 		unsigned long long int	getId(void) const;
 		std::string	getCode(void) const;
 		std::string	getSection(void) const;
@@ -38,6 +40,7 @@ class Shelf{
 
 		// setters
 
+		void	setIsVirtual(bool isVirtual);
 		void	setId(unsigned long long int id);
 		void	setCode(std::string code);
 		void	setSection(std::string section);

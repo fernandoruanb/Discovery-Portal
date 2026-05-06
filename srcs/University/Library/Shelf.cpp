@@ -14,6 +14,10 @@ Shelf::~Shelf(void) {
 	std::cout << "Shelf destroyed" << std::endl;
 }
 
+bool	Shelf::getIsVirtual(void) const {
+	return (this->_isVirtual);
+}
+
 std::vector<Book>	Shelf::getBooks(void) const {
 	return (this->_books);
 }
@@ -40,6 +44,10 @@ unsigned int	Shelf::getCapacity(void) const {
 
 bool	Shelf::getAvailable(void) const {
 	return (this->_available);
+}
+
+void	Shelf::setIsVirtual(unsigned long long int isVirtual) {
+	this->_isVirtual = isVirtual;
 }
 
 void	Shelf::setId(unsigned long long int id) {
