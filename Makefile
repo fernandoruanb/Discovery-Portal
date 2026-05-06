@@ -4,11 +4,14 @@ NAME = DiscoveryPortal
 # Compiler used to compile C++ files
 CC = c++
 
+
+# to connect to postgresql
+LDFLAGS = -lpqxx -lpq
+
 # Compiler flags:
 # -Wall enables common warnings
 # -Wextra enables extra warnings
 # -Werror treats warnings as errors
-
 CFLAGS = -Wall -Werror -Wextra
 
 # Directory containing source files
@@ -47,7 +50,7 @@ all: $(NAME)
 # It links all object files into the program
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -I $(INCDIR) -o $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) -I $(INCDIR) -o $(NAME) $(OBJS) $(LDFLAGS)
 
 # Rule to compile each .cpp file into a .o file
 # $< means the source file

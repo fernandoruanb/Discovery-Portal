@@ -11,7 +11,7 @@ class Database {
 	private:
 		// C++ -> libpqxx -> PostgreSQL
 
-		pqxx::connection	*_connection; // pointer to stabilish the connection
+		pqxx::connection	_connection; // direct object to the connection with the database 
 
 		// I do not want empty databases or copy constructors or operators for the same purpose
 
